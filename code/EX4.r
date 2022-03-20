@@ -33,7 +33,7 @@ err = tapply(unlist(cv_err), cv_pars[, "mtry"], sum)
 })
 pdf(paste0("rf_cv_mc", nc, ".pdf")); plot(mtry_val, err/(n - n_test)); dev.off()
 
-#parallelization
+#parallelization 
 ntree_p = lapply(splitIndices(500, nc), length)
 rf = function(x) randomForest(lettr ~ ., train, ntree=x)
 rf.out = mclapply(ntree_p, rf, mc.cores = nc)

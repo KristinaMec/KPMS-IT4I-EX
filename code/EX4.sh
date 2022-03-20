@@ -11,6 +11,7 @@ pwd
 module load R
 echo "loaded R"
 
+time Rscript EX4.r 8
 time Rscript EX4.r 16
 time Rscript EX4.r 32
 time Rscript EX4.r 64
